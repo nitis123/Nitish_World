@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: argo-scripts
+  
+spec:
+  entrypoint: whalesay
+  templates:
+    - name: whalesay  
+      script:
+        image: python:ubuntu:latest
+        command: [cowsay]
+        source: |
+         nitish.py

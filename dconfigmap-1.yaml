@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nitish-env-configmap
+  labels: 
+    myapp: nitish
+    app: nginx
+
+spec:
+  containers:
+  - name: env-var
+    image: nginx
+    envFrom:
+    - configMapRef:
+      name: nitish-configmap-1
+
+    
